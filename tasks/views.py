@@ -23,7 +23,20 @@ def lista_proyectos(request):
     return render(request, 'tasks/projects.html', {
         'projects': projects,
     })
+    
+def lista_lugares(request):
+    places = models.Place.objects.all()
+    return render(request, 'tasks/places.html', {
+        'places': places,
+    })
 
+def detalle_lugar(request, pk):
+    place = models.Place.objects.get(pk=[pk,0])
+    tareas = models.Task.objects.all().filter(place=place)
+    return render(request, 'tasks/detalle_lugar.html', {
+        'place': place,
+        'tareas': tareas,
+    })
 
 def tareas_urgentes(request):
     tareas = (

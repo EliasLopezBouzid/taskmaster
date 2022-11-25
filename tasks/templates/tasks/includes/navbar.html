@@ -28,14 +28,14 @@
           </a>
   
           <div class="navbar-dropdown">
-            <a href="{% url 'tareas_no_urgentes' %}" class="navbar-item">
+            <a href="{% url 'urgentes' %}" class="navbar-item">
               Urgentes
             </a>
             <a class="navbar-item" href="{% url 'no-urgentes' %}">
               No urgentes
             </a>
             <hr class="navbar-divider">
-            <a class="navbar-item">
+            <a class="navbar-item" href="{% url 'crear_proyecto' %}">
               Nueva tarea
             </a>
           </div>

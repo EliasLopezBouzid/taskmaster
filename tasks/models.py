@@ -5,6 +5,17 @@ from django.utils import timezone
 def hoy():
     return timezone.now().date()
 
+class Place(models.Model):
+    
+    description = models.CharField(max_length=32)
+
+    class Meta:
+        verbose_name = 'Lugar'
+        verbose_name_plural = 'Lugares'
+
+    def __str__(self):
+        return f'{self.description}'
+
 
 class Project(models.Model):
 
@@ -62,6 +73,14 @@ class Task(models.Model):
         blank=True,
         null=True,
         default=None,
+        on_delete=models.SET_NULL,
+        )
+    
+    place = models.ForeignKey(
+        Place,
+        blank=True,
+        null=True,
+        default=0,
         on_delete=models.SET_NULL,
         )
 

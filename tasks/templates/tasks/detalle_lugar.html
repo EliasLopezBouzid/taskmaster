@@ -1,0 +1,16 @@
+{% extends 'tasks/base.html' %}
+
+{% block title %}
+Detalles Lugar {{ place.description }}
+{% endblock title %}
+
+{% block content %}
+
+<h2 class="title">Detalles lugar</h2>
+<h3 class="subtitle">{{ place }}</h2>
+
+<h2 class="subtitle">Tareas asociadas a este lugar</h2>
+
+{% include 'tasks/includes/task_table.html' with tareas=place.task_set.all %}
+
+{% endblock content %}

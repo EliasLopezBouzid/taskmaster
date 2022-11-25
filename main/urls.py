@@ -23,4 +23,7 @@ urlpatterns = [
         tasks.views.detalle_proyecto_code,
         name='proyecto_por_codigo' 
         ),
+    path('places/', tasks.views.lista_lugares, name='lugares'),
+    path('places/<int:pk>/', tasks.views.detalle_lugar, name='detalle_lugar'),
+
 ]

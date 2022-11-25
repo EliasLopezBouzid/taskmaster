@@ -1,0 +1,23 @@
+{% extends 'tasks/base.html' %}
+
+{% block titulo %}
+Lista de Lugares ~ TaskMaster! Tu gestor de tareas
+{% endblock titulo %}
+
+{% block content %}
+<h1 class="title">Lista de Lugares</h1>
+
+<div class="columns is-multiline">
+  {% for place in places %}
+    <div class="column is-4 panel is_primary">
+      <div class="panel-block">
+        <a class="button is-info is-big"
+           href="{% url 'detalle_lugar' pk=place.pk %}">
+           {{ place.description }}
+        </a>
+      </div>
+    </div>   
+  {% endfor %}
+  </div><!-- de columns--> 
+
+{% endblock content %}

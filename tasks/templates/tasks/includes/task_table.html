@@ -6,6 +6,7 @@
       <th>Orden</th>
       <th>Fuera de plazo</th>
       <th>Proyecto</th>
+      <th>Lugar</th>
       <th>Color</th>
     </tr>
   </thead>
@@ -28,6 +29,14 @@
       <td>
         {% if tarea.project %}
           <b>{{ tarea.project.name }}</b>
+        {% else %}
+          <i>-</i>
+        {% endif %}
+      </td>
+
+      <td>
+        {% if tarea.place %}
+          <b>{{ tarea.place }}</b>
         {% else %}
           <i>-</i>
         {% endif %}

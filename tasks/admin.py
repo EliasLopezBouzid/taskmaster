@@ -26,3 +26,8 @@ class ProjectAdmin(admin.ModelAdmin):
     pass
 
 admin.site.register(models.Project, ProjectAdmin)
+
+class PlaceAdmin(admin.ModelAdmin):
+    pass
+
+admin.site.register(models.Place, PlaceAdmin)
