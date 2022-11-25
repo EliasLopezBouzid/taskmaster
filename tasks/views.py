@@ -31,7 +31,7 @@ def lista_lugares(request):
     })
 
 def detalle_lugar(request, pk):
-    place = models.Place.objects.get(pk=[pk,0])
+    place = models.Place.objects.get(pk=pk)
     tareas = models.Task.objects.all().filter(place=place)
     return render(request, 'tasks/detalle_lugar.html', {
         'place': place,
