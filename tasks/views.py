@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.shortcuts import redirect
 from django.utils import timezone
+from django.db.models import Q
 
 from . import models
 from . import forms
@@ -31,8 +32,8 @@ def lista_lugares(request):
     })
 
 def detalle_lugar(request, pk):
-    place = models.Place.objects.get(pk=pk)
-    tareas = models.Task.objects.all().filter(place=place)
+    place = models.Place.objects.get(pk__in=[pk])
+    tareas = place.task_set.filter(place=place).filter(place=0)
     return render(request, 'tasks/detalle_lugar.html', {
         'place': place,
         'tareas': tareas,
