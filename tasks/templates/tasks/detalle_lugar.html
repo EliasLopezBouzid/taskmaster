@@ -11,6 +11,6 @@ Detalles Lugar {{ place.description }}
 
 <h2 class="subtitle">Tareas asociadas a este lugar</h2>
 
-{% include 'tasks/includes/task_table.html' with tareas=place.task_set.all %}
+{% include 'tasks/includes/task_table.html' %}
 
 {% endblock content %}
